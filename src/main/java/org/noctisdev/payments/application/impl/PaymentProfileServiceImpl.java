@@ -7,6 +7,7 @@ import org.noctisdev.payments.application.dto.response.PaymentProfileResponse;
 import org.noctisdev.payments.domain.models.PaymentProfile;
 import org.noctisdev.payments.domain.repository.IPaymentProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -23,6 +24,7 @@ public class PaymentProfileServiceImpl implements IPaymentProfileService {
         paymentProfile.setPaymentProfileUuid(UUID.randomUUID());
         paymentProfile.setProfileName(request.profileName());
         paymentProfile.setAccountEmail(request.accountEmail());
+        paymentProfile.setPhoneNumber(request.phoneNumber());
 
         repository.save(paymentProfile);
 
@@ -36,6 +38,7 @@ public class PaymentProfileServiceImpl implements IPaymentProfileService {
             .data(response)
             .message("Payment profile created successfully")
             .success(Boolean.TRUE)
+            .httpStatus(HttpStatus.OK)
             .status(200).build();
     }
 

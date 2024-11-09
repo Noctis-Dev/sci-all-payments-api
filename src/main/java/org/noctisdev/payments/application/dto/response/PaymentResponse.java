@@ -4,5 +4,8 @@ import java.time.LocalDate;
 
 public record PaymentResponse(
     String paymentUrl,
-    LocalDate createdAt
+    LocalDate createdAt,
+    String payerName,
+    String payerEmail,
+    String payerPhoneNumber
 ) { }

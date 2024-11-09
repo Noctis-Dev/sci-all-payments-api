@@ -2,24 +2,23 @@ package org.noctisdev.payments.infraestructure.controllers;
 
 import org.noctisdev.payments.application.IPaymentService;
 import org.noctisdev.payments.application.dto.BaseResponse;
-import org.noctisdev.payments.application.dto.request.PaymentRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/donations")
-public class CreateDonationController {
+public class GetPaymentsController {
 
     @Autowired
-    private IPaymentService paymentService;
+    private IPaymentService service;
 
-    @PostMapping
-    public ResponseEntity<BaseResponse> createDonation(@RequestBody PaymentRequest request) {
-        return paymentService.generatePayment(request).apply();
+    @GetMapping
+    public ResponseEntity<BaseResponse> getPayments(@RequestParam String user) {
+        return service.getPayment(user).apply();
     }
 
 }

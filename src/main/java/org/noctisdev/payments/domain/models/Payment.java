@@ -18,5 +18,11 @@ public class Payment {
 
     private Double amount;
 
+    private String payerName;
+
+    private String payerEmail;
+
+    private String payerPhone;
+
     private PaymentProfile paymentProfile;
 }

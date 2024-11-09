@@ -11,4 +11,5 @@ public class PaymentProfile {
     private UUID paymentProfileUuid;
     private String profileName;
     private String accountEmail;
+    private String phoneNumber;
 }

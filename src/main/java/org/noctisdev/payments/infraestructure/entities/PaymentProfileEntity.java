@@ -15,12 +15,12 @@ import java.util.UUID;
 @Entity
 @Table(name = "payment_profiles")
 public class PaymentProfileEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "payment_profile_id", nullable = false)
     private Long id;
 
-    @Size(max = 36)
     @NotNull
     @JdbcTypeCode(SqlTypes.VARCHAR)
     @Column(name = "payment_profile_uuid", nullable = false, length = 36)
@@ -35,5 +35,10 @@ public class PaymentProfileEntity {
     @NotNull
     @Column(name = "account_email", nullable = false, length = 100)
     private String accountEmail;
+
+    @Size(max = 20)
+    @NotNull
+    @Column(name = "phone_number", length = 20)
+    private String phoneNumber;
 
 }

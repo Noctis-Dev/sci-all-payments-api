@@ -20,6 +20,9 @@ public class PaymentMapperImpl implements IPaymentMapper {
         payment.setId(entity.getId());
         payment.setPaymentUuid(entity.getPaymentUuid());
         payment.setAmount(entity.getAmount());
+        payment.setPayerName(entity.getPayerName());
+        payment.setPayerEmail(entity.getPayerEmail());
+        payment.setPayerPhone(entity.getPayerPhone());
         payment.setPaymentProfile(paymentProfileMapper.toDomain(entity.getPaymentProfileEntity()));
 
         return payment;
@@ -32,6 +35,9 @@ public class PaymentMapperImpl implements IPaymentMapper {
         entity.setId(domain.getId());
         entity.setPaymentUuid(domain.getPaymentUuid());
         entity.setAmount(domain.getAmount());
+        entity.setPayerName(domain.getPayerName());
+        entity.setPayerEmail(domain.getPayerEmail());
+        entity.setPayerPhone(domain.getPayerPhone());
         entity.setPaymentProfileEntity(paymentProfileMapper.toEntity(domain.getPaymentProfile()));
 
         return entity;

@@ -15,6 +15,7 @@ public class PaymentProfileMapperImpl implements IPaymentProfileMapper {
         paymentProfile.setPaymentProfileUuid(entity.getPaymentProfileUuid());
         paymentProfile.setProfileName(entity.getProfileName());
         paymentProfile.setAccountEmail(entity.getAccountEmail());
+        paymentProfile.setPhoneNumber(entity.getPhoneNumber());
 
         return paymentProfile;
     }
@@ -27,6 +28,7 @@ public class PaymentProfileMapperImpl implements IPaymentProfileMapper {
         entity.setPaymentProfileUuid(domain.getPaymentProfileUuid());
         entity.setProfileName(domain.getProfileName());
         entity.setAccountEmail(domain.getAccountEmail());
+        entity.setPhoneNumber(domain.getPhoneNumber());
 
         return entity;
     }

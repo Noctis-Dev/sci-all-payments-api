@@ -7,6 +7,8 @@ import org.noctisdev.payments.infraestructure.repository.jpa.PaymentEntityReposi
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class PaymentRepositoryImpl implements IPaymentRepository {
 
@@ -19,5 +21,10 @@ public class PaymentRepositoryImpl implements IPaymentRepository {
     @Override
     public Payment save(Payment payment) {
         return mapper.toDomain(jpaRepository.save(mapper.toEntity(payment)));
+    }
+
+    @Override
+    public List<Payment> findByEmail(String email) {
+        return jpaRepository.findByPayerEmail(email).stream().map(mapper::toDomain).toList();
     }
 }
