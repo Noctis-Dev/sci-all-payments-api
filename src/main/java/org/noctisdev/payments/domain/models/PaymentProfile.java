@@ -12,4 +12,6 @@ public class PaymentProfile {
     private String profileName;
     private String accountEmail;
     private String phoneNumber;
+    private String oauthUrl;
+    private String oauthToken;
 }

@@ -16,6 +16,8 @@ public class PaymentProfileMapperImpl implements IPaymentProfileMapper {
         paymentProfile.setProfileName(entity.getProfileName());
         paymentProfile.setAccountEmail(entity.getAccountEmail());
         paymentProfile.setPhoneNumber(entity.getPhoneNumber());
+        paymentProfile.setOauthUrl(entity.getOauthUrl());
+        paymentProfile.setOauthToken(entity.getOauthToken());
 
         return paymentProfile;
     }
@@ -29,6 +31,8 @@ public class PaymentProfileMapperImpl implements IPaymentProfileMapper {
         entity.setProfileName(domain.getProfileName());
         entity.setAccountEmail(domain.getAccountEmail());
         entity.setPhoneNumber(domain.getPhoneNumber());
+        entity.setOauthUrl(domain.getOauthUrl());
+        entity.setOauthToken(domain.getOauthToken());
 
         return entity;
     }

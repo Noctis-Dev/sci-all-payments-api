@@ -10,4 +10,7 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "mp")
 public class MercadoPagoConfig {
     private String accessToken;
+    private String clientSecret;
+    private String clientId;
+    private String redirectUri;
 }

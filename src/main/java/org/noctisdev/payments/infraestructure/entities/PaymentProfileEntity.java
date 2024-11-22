@@ -41,4 +41,13 @@ public class PaymentProfileEntity {
     @Column(name = "phone_number", length = 20)
     private String phoneNumber;
 
+    @Size(max = 255)
+    @NotNull
+    @Column(name = "oauth_url", nullable = false, length = 255)
+    private String oauthUrl;
+
+    @Size(max = 255)
+    @Column(name = "oauth_token", length = 255)
+    private String oauthToken;
+
 }
