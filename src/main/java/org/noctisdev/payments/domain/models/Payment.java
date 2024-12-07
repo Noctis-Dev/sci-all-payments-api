@@ -16,13 +16,17 @@ public class Payment {
     @UUID
     private java.util.UUID paymentUuid;
 
+    @NotNull
     private Double amount;
 
+    @NotBlank
     private String payerName;
 
+    @NotBlank
     private String payerEmail;
 
+    @NotBlank
     private String payerPhone;
-
+    
     private PaymentProfile paymentProfile;
 }
